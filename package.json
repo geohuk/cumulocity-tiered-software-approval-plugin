@@ -1,6 +1,12 @@
 {
   "name": "app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Georgi Huklev",
+    "email": "georgi.huklev@cumulocity.com"
+  },
+  "description": "",
+  "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,16 +16,22 @@
   },
   "c8y": {
     "application": {
+      "isPackage": true,
+      "package": "plugin",
       "contextPath": "tiered-approval-plugin",
-      "key": "tiered-approval-plugin",
-      "name": "Tiered Software Approval Plugin",
-      "type": "PLUGIN",
-      "imports": [
-        "devicemanagement"
+      "exports": [
+        {
+          "name": "Tiered Approval Plugin",
+          "module": "TieredApprovalPluginModule",
+          "path": "./src/app/app.module.ts",
+          "description": "Adds a Promote action to the Software Repository list."
+        }
       ],
-      "provider": "GEOHUK",
-      "description": "Adds tiered approval for software.",
-      "version": "1.0.0"
+      "remotes": {
+        "tiered-approval-plugin": [
+          "TieredApprovalPluginModule"
+        ]
+      }
     }
   },
   "private": true,

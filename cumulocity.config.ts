@@ -8,7 +8,7 @@ const defaultDescription = gettext(
 
 export default {
   runTime: {
-    author,
+    author: author.name,
     description: description || defaultDescription,
     version,
     name,
@@ -30,7 +30,7 @@ export default {
         path: '@c8y/ngx-components/replace-device',
         description:
           'Replace device plugin for enabling the action of replacing a physical device with another one.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Services plugin',
@@ -38,7 +38,7 @@ export default {
         path: '@c8y/ngx-components/services',
         description:
           'The Services plugin provides a device tab that lists all services running on a device with their status, name, type and date of the last update.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Remote access: Configuration list',
@@ -46,42 +46,43 @@ export default {
         path: '@c8y/ngx-components/remote-access/configurations',
         description:
           'Allows to configure remote access on devices and to initiate the remote access connections.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Remote access: VNC protocol support',
         module: 'remoteAccessVNCProviders',
         path: '@c8y/ngx-components/remote-access/vnc',
         description: 'Adds VNC protocol support to the remote access feature.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Remote access: SSH protocol support',
         module: 'remoteAccessSSHProviders',
         path: '@c8y/ngx-components/remote-access/ssh',
         description: 'Adds SSH protocol support to the remote access feature.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Remote access: Telnet protocol support',
         module: 'remoteAccessTelnetProviders',
         path: '@c8y/ngx-components/remote-access/telnet',
-        description: 'Adds Telnet protocol support to the remote access feature.',
-        scope: 'self'
+        description:
+          'Adds Telnet protocol support to the remote access feature.',
+        scope: 'self',
       },
       {
         name: 'Remote access: Passthrough protocol support',
         module: 'remoteAccessPassthroughProviders',
         path: '@c8y/ngx-components/remote-access/passthrough',
         description: 'Adds passthrough support to the remote access feature.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Data point explorer',
         module: 'dataExplorerMeasurementsFeature',
         path: '@c8y/ngx-components/datapoint-explorer/devicemanagement',
         description: 'Enables visualization of data points',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Dashboard manager',
@@ -89,24 +90,28 @@ export default {
         path: '@c8y/ngx-components/dashboard-manager/devicemanagement',
         description:
           'Adds Dashboard manager as Management feature and allows to manage type dashboards.',
-        scope: 'self'
+        scope: 'self',
       },
       {
         name: 'Sensor phone',
         module: 'SensorPhoneModule',
         path: '@c8y/ngx-components/sensor-phone',
         description: 'Dialogs to connect smartphone to platform.',
-        scope: 'self'
-      }
+        scope: 'self',
+      },
     ],
     remotes: {
-      [`lwm2m-ui-plugin@${version.split('.')[0]}-stable`]: ['Lwm2mModuleWrapper'],
+      [`lwm2m-ui-plugin@${version.split('.')[0]}-stable`]: [
+        'Lwm2mModuleWrapper',
+      ],
       ['c8y-asm-ui@latest']: ['AdvancedSoftwareModule'],
-      [`smart-rules@${version.split('.')[0]}-stable`]: ['AnalyticsInstanceModule'],
+      [`smart-rules@${version.split('.')[0]}-stable`]: [
+        'AnalyticsInstanceModule',
+      ],
       [`device-parameters-ui-plugin@${version.split('.')[0]}-stable`]: [
-        'deviceParametersFeatureProvider'
-      ]
-    }
+        'deviceParametersFeatureProvider',
+      ],
+    },
   },
   buildTime: {
     federation: [
@@ -125,7 +130,7 @@ export default {
       'angular',
       'ngx-bootstrap',
       '@ngx-translate/core',
-      '@ngx-formly/core'
-    ]
-  }
+      '@ngx-formly/core',
+    ],
+  },
 } as const satisfies ConfigurationOptions;

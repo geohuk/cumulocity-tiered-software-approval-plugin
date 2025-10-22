@@ -43,7 +43,9 @@ import {
 import { cockpitWidgets } from '@c8y/ngx-components/widgets/cockpit';
 import { datapointGraphWidgetproviders } from '@c8y/ngx-components/widgets/definitions/datapoints-graph';
 import { deviceManagementWidgets } from '@c8y/ngx-components/widgets/device-management';
-import { PromoteActionFactory } from './promote-action.factory';
+
+import { PromoteActionControlsFactory } from './promote-action.factory';
+import { hookDataGridActionControls } from '@c8y/ngx-components';
 
 @NgModule({
   imports: [
@@ -89,7 +91,7 @@ import { PromoteActionFactory } from './promote-action.factory';
     deviceMapFeatureProvider,
     trackingFeatureProvider,
     datapointGraphWidgetproviders,
-    PromoteActionFactory,
+    hookDataGridActionControls(PromoteActionControlsFactory),
   ],
 })
 export class AppModule extends HybridAppModule {
