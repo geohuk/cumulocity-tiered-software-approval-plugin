@@ -8,6 +8,20 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "c8y": {
+    "application": {
+      "contextPath": "tiered-approval-plugin",
+      "key": "tiered-approval-plugin",
+      "name": "Tiered Software Approval Plugin",
+      "type": "PLUGIN",
+      "imports": [
+        "devicemanagement"
+      ],
+      "provider": "GEOHUK",
+      "description": "Adds tiered approval for software.",
+      "version": "1.0.0"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/cdk": "^19.2.19",
